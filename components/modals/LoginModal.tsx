@@ -1,5 +1,7 @@
-import { useCallback, useState } from "react";
 import { signIn } from "next-auth/react";
+import { useCallback, useState } from "react";
+import { toast } from "react-hot-toast";
+
 import useLoginModal from "@/hooks/useLoginModal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 
@@ -14,11 +16,6 @@ const LoginModal = () => {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const onToggle = useCallback(() => {
-    loginModal.onClose();
-    registerModal.onOpen();
-  }, [loginModal, registerModal]);
-
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
@@ -28,13 +25,20 @@ const LoginModal = () => {
         password,
       });
 
+      toast.success("Logged in");
+
       loginModal.onClose();
     } catch (error) {
-      console.error(error);
+      toast.error("Something went wrong");
     } finally {
       setIsLoading(false);
     }
-  }, [loginModal, email, password]);
+  }, [email, password, loginModal]);
+
+  const onToggle = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal]);
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -57,7 +61,7 @@ const LoginModal = () => {
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4">
       <p>
-        First time using Twitter?
+        First time using CorgTweet?
         <span
           onClick={onToggle}
           className="

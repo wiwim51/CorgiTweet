@@ -60,7 +60,7 @@ const ImageUpload: React.FC<DropzoneProps> = ({
           <Image src={base64} height="100" width="100" alt="Uploaded image" />
         </div>
       ) : (
-        <p className="text-white">{label}</p>
+        <p className="text-beige">{label}</p>
       )}
     </div>
   );
