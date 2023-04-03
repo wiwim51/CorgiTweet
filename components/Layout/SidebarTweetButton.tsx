@@ -35,7 +35,7 @@ const SidebarTweetButton = () => {
         <img src={pate} alt="logo patte-de-chien" />
       </div>
       <div className="mt-6 hidden lg:block px-4 py-2 rounded-full bg-roux hover:bg-black hover:bg-opacity-90 cursor-pointer transition ">
-        <p className="hidden lg:block text-center font-semibold text-black text-[20px]">
+        <p className="hidden lg:block text-center font-semibold text-black hover:text-beige text-[20px]">
           CorgTweet
         </p>
       </div>

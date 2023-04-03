@@ -1,15 +1,18 @@
-import Header from "@/components/Header";
-import useUser from "@/hooks/useUser";
 import { useRouter } from "next/router";
 import { ClipLoader } from "react-spinners";
+
+import Header from "@/components/Header";
+import useUser from "@/hooks/useUser";
+import UserHero from "@/components/users/UserHero";
+import UserBio from "@/components/users/UserBio";
 
 const UserView = () => {
   const router = useRouter();
   const { userId } = router.query;
 
-  const { data: fetcherUser, isLoading } = useUser(userId as string);
+  const { data: fetchedUser, isLoading } = useUser(userId as string);
 
-  if (isLoading || !fetcherUser) {
+  if (isLoading || !fetchedUser) {
     return (
       <div
         className="flex justify-center items-center
@@ -21,7 +24,9 @@ const UserView = () => {
   }
   return (
     <>
-      <Header showBackArrow label="User Profile" />
+      <Header showBackArrow label={fetchedUser?.name} />
+      <UserHero userId={userId as string} />
+      <UserBio userId={userId as string} />
     </>
   );
 };
