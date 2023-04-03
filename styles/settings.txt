@@ -1,0 +1,4 @@
+#FEA538  roux
+#F4E9D6  blanc/beige
+#FB4742  red/tong
+#2B1716  noir/marron
