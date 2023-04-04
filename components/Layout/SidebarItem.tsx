@@ -1,9 +1,10 @@
+import React, { useCallback } from "react";
 import { useRouter } from "next/router";
-import { useCallback } from "react";
 import { IconType } from "react-icons";
-import { BsDot } from "react-icons/bs";
+
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
+import { BsDot } from "react-icons/bs";
 
 interface SidebarItemProps {
   label: string;
@@ -22,9 +23,11 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   onClick,
   alert,
 }) => {
-  const LoginModal = useLoginModal();
-  const { data: currentUser } = useCurrentUser();
   const router = useRouter();
+  const LoginModal = useLoginModal();
+
+  const { data: currentUser } = useCurrentUser();
+
   const handleClick = useCallback(() => {
     if (onClick) {
       return onClick();
