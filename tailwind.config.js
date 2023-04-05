@@ -10,9 +10,9 @@ module.exports = {
       colors: {
         roux: "#FEA538",
         "roux-clair": "#FFB75E",
-        beige: "#F4E9D6",
+        beige: "#FFFFFF",
         red: "#FB4742",
-        black: "#2B1716",
+        black: "#202124",
       },
     },
   },

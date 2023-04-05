@@ -1,8 +1,8 @@
-import { BsTwitter } from "react-icons/bs";
-
 import useNotifications from "@/hooks/useNotifications";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { useEffect } from "react";
+
+const corgi = "/images/corgi.png";
 
 const NotificationsFeed = () => {
   const { data: currentUser, mutate: mutateCurrentUser } = useCurrentUser();
@@ -23,9 +23,9 @@ const NotificationsFeed = () => {
   return ( 
     <div className="flex flex-col">
       {fetchedNotifications.map((notification: Record<string, any>) => (
-        <div key={notification.id} className="flex flex-row items-center p-6 gap-4 border-b-[1px] border-neutral-800">
-          <BsTwitter color="white" size={32} />
-          <p className="text-white">
+        <div key={notification.id} className="flex flex-row items-center p-6 gap-4 border-b-[1px] border-black">
+          <img className="rounded-full h-14 w-14" src={corgi} alt="logo corgi" />
+          <p className="text-black">
             {notification.body}
           </p>
         </div>

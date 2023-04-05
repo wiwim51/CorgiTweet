@@ -23,15 +23,15 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       className={`disabled:opacity-70 disabled:cursor-not-allowed rounded-full font-semibold hover:opacity-80 transition border-2
         ${fullWidth ? "w-full" : "w-fit"}
-        ${secondary ? "bg-beige" : "bg-red"}
-        ${secondary ? "text-black" : "text-white"}
-        ${secondary ? "border-black" : "border-beige"}
+        ${secondary ? "bg-beige" : "bg-roux"}
+        ${secondary ? "text-black" : "text-beige"}
+        ${secondary ? "border-black" : "border-roux"}
         ${large ? "text-xl" : "text-md"}
         ${large ? "px-5" : "px-4"}
         ${large ? "py-3" : "py-2"}
         ${outline ? "bg-transparent" : ""}
-        ${outline ? "border-white" : ""}
-        ${outline ? "text-white" : ""}`}
+        ${outline ? "border-beige" : ""}
+        ${outline ? "text-beige" : ""}`}
     >
       {label}
     </button>

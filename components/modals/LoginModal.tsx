@@ -19,7 +19,7 @@ const LoginModal = () => {
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
-
+      
       await signIn("credentials", {
         email,
         password,
